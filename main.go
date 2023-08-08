@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "go_test/inventory" // Replace with the actual path to your inventory package
+    "github.com/TomPlt/dnd_inv_go/inventory" // Replace with the actual path to your inventory package
 )
 
 func main() {
