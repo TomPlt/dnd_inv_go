@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"errors"
+	"strconv"
 	// "fmt"
 )
 
@@ -29,7 +30,8 @@ func (inv *Inventory) AddItem(item Item) error {
 
 func (inv *Inventory) RemoveItem(itemID int) error {
 	if _, exists := inv.Items[itemID]; !exists {
-		return errors.New("item does not exist")
+		// panic("item does not exist")
+		return errors.New("item with id " + strconv.Itoa(itemID) + " does not exist")
 	}
 	delete(inv.Items, itemID)
 	inv.CurrentSize--
