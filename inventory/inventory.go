@@ -1,4 +1,4 @@
-package inventory 
+package inventory
 
 import (
 	"errors"
@@ -6,15 +6,14 @@ import (
 )
 
 type Inventory struct {
-	Items map[int]Item
-	Capacity int
+	Items       map[int]Item
+	Capacity    int
 	CurrentSize int
 }
 
-
 func NewInventory(capacity int) *Inventory {
 	return &Inventory{
-		Items: make(map[int]Item),
+		Items:    make(map[int]Item),
 		Capacity: capacity,
 	}
 }
@@ -28,7 +27,7 @@ func (inv *Inventory) AddItem(item Item) error {
 	return nil
 }
 
-func (inv *Inventory) RemoveItem(itemID int) error{
+func (inv *Inventory) RemoveItem(itemID int) error {
 	if _, exists := inv.Items[itemID]; !exists {
 		return errors.New("item does not exist")
 	}
@@ -36,6 +35,3 @@ func (inv *Inventory) RemoveItem(itemID int) error{
 	inv.CurrentSize--
 	return nil
 }
-
-
-
