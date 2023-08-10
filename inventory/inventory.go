@@ -50,3 +50,5 @@ func (inv *Inventory) RemoveItem(itemID int, quantity int) error {
 	inv.CurrentSize -= quantity
 	return nil
 }
+
+

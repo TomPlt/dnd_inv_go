@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/TomPlt/dnd_inv_go/inventory" // Replace with the actual path to your inventory package
+
+	"github.com/TomPlt/dnd_inv_go/inventory"
+	"github.com/TomPlt/dnd_inv_go/player"
 )
 
 func main() {
@@ -20,8 +22,6 @@ func main() {
 	fmt.Printf("Current inventory: %v\n", inv.Items)
 	inv.AddItem(item2, 2)
 	fmt.Printf("Current inventory: %v\n", inv.Items)
-	// fmt.Printf("Error: %v\n", test)
-	// inv.AddItem(item2)
-	// fmt.Printf("Current inventory: %v\n", inv.Items)
-
+	p := player.NewPlayer("Peter", 10, 100)
+	fmt.Printf("Player: %v\n", p)
 }
